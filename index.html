@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoMo Data Analysis Dashboard</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="stylesheet" href="static/visualization.css">
+      </head>
+  <body>
+    <header>
+      <h1>MoMo Transaction Dashboard</h1>
+    </header>
+    <main>
+      <section id="visualizations">
+        <h2>Visualizations</h2>
+        <div class="chart-wrapper">
+          <canvas id="chartContainer"></canvas>
+        </div>
+      </section>
+      <section id="transaction-section">
+        <section id="filters">
+          <h2>Filters</h2>
+          <div class="filter-controls">
+            <input type="text" id="search" placeholder="Search transactions..." />
+            <select id="typeFilter">
+              <option value="" selected>All Types</option>
+              <option value="Payments to Code Holders">Payments to Code Holders</option>
+              <option value="Incoming Money">Incoming Money</option>
+              <option value="Transfers to Mobile Numbers">Transfers to Mobile Numbers</option>
+              <option value="Bank Deposits">Bank Deposits</option>
+              <option value="Airtime Bill Payments">Airtime Bill Payments</option>
+              <option value="Cash Power Bill Payments">Cash Power Bill Payments</option>
+              <option value="Transactions Initiated by Third Parties">Transactions Initiated by Third Parties</option>
+              <option value="Withdrawals from Agents">Withdrawals from Agents</option>
+              <option value="Bank Transfers">Bank Transfers</option>
+              <option value="Internet and Voice Bundle Purchases">Internet and Voice Bundle Purchases</option>
+            </select>
+            <input type="date" id="dateFilter" />
+            <button id="exportBtn">Export to CSV</button>
+          </div>
+        </section>
+        <section id="details">
+          <h2>Transaction Details</h2>
+          <div id="itemCount"></div>
+          <div id="detailsView"></div>
+          <div id="pagination">
+            <button id="prevBtn">Previous</button>
+            <span id="pageInfo"></span>
+            <button id="nextBtn">Next</button>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="exportModal">
+      <div id="modalHeader">
+        <h3>Export Transactions</h3>
+        <button id="closeModal">✕</button>
+      </div>
+      <div id="exportMessage">Select a transaction type and range to export as CSV.</div>
+      <label for="exportTypeFilter">Transaction Type:</label>
+      <select id="exportTypeFilter">
+        <option value="" selected>All Types</option>
+        <option value="Payments to Code Holders">Payments to Code Holders</option>
+        <option value="Incoming Money">Incoming Money</option>
+        <option value="Transfers to Mobile Numbers">Transfers to Mobile Numbers</option>
+        <option value="Bank Deposits">Bank Deposits</option>
+        <option value="Airtime Bill Payments">Airtime Bill Payments</option>
+        <option value="Cash Power Bill Payments">Cash Power Bill Payments</option>
+        <option value="Transactions Initiated by Third Parties">Transactions Initiated by Third Parties</option>
+        <option value="Withdrawals from Agents">Withdrawals from Agents</option>
+        <option value="Bank Transfers">Bank Transfers</option>
+        <option value="Internet and Voice Bundle Purchases">Internet and Voice Bundle Purchases</option>
+      </select>
+      <div id="exportContext"></div>
+      <div class="export-mode">
+        <label><input type="radio" name="exportMode" value="page" checked> Page Range</label>
+        <label><input type="radio" name="exportMode" value="entry"> Entry Range</label>
+      </div>
+      <div id="pageRangeInputs">
+        <label for="startPage">Start Page:</label>
+        <input type="number" id="startPage" min="1" value="1" />
+        <label for="endPage">End Page:</label>
+        <input type="number" id="endPage" min="1" value="1" />
+      </div>
+      <div id="entryRangeInputs">
+        <label for="startEntry">Start Entry:</label>
+        <input type="number" id="startEntry" min="1" value="1" />
+        <label for="endEntry">End Entry:</label>
+        <input type="number" id="endEntry" min="1" value="1" />
+      </div>
+      <div class="export-actions">
+        <button id="confirmExport">Download CSV</button>
+        <button id="cancelExport">Cancel</button>
+      </div>
+    </div>
+     </body>
+</html>
