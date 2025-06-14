@@ -237,3 +237,91 @@ document.addEventListener('DOMContentLoaded', () => {
             closeDetailedView();
         }
     });
+
+    function exportToCSV() {
+        const selectedType = exportTypeFilter.value;
+        const mode = document.querySelector('input[name="exportMode"]:checked').value;
+        let exportTransactions = selectedType
+            ? filteredTransactions.filter(t => t.type === selectedType)
+            : filteredTransactions;
+        const totalItems = exportTransactions.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        let startIndex, endIndex;
+        if (mode === 'page') {
+            const startPage = parseInt(startPageInput.value) || 1;
+            const endPage = parseInt(endPageInput.value) || 1;
+            if (isNaN(startPage) || startPage < 1) {
+                alert(`Start page must be at least 1.`);
+                return;
+            }
+            if (isNaN(endPage) || endPage < startPage) {
+                alert(`End page must be at least ${startPage}.`);
+                return;
+            }
+            if (endPage > totalPages) {
+                alert(`End page exceeds total pages (${totalPages}) for ${selectedType || 'All Types'}.`);
+                return;
+            }
+            startIndex = (startPage - 1) * itemsPerPage;
+            endIndex = endPage * itemsPerPage;
+        } else {
+            const startEntry = parseInt(startEntryInput.value) || 1;
+            const endEntry = parseInt(endEntryInput.value) || 1;
+            if (isNaN(startEntry) || startEntry < 1) {
+                alert(`Start entry must be at least 1.`);
+                return;
+            }
+            if (isNaN(endEntry) || endEntry < startEntry) {
+                alert(`End entry must be at least ${startEntry}.`);
+                return;
+            }
+            if (endEntry > totalItems) {
+                alert(`End entry exceeds total entries (${totalItems}) for ${selectedType || 'All Types'}.`);
+                return;
+            }
+            startIndex = startEntry - 1;
+            endIndex = endEntry;
+        }
+
+        exportTransactions = exportTransactions.slice(startIndex, endIndex);
+
+        if (exportTransactions.length === 0) {
+            alert(`No transactions available to export for ${selectedType || 'All Types'} in the selected range.`);
+            return;
+        }
+
+        // Create CSV content
+        const headers = ['Type', 'Amount', 'Date', 'Sender', 'Receiver', 'Description'];
+        const csvRows = [headers.join(',')];
+        exportTransactions.forEach(t => {
+            const row = [
+                `"${t.type.replace(/"/g, '""')}"`,
+                t.amount,
+                `"${t.date}"`,
+                `"${(t.sender || 'N/A').replace(/"/g, '""')}"`,
+                `"${(t.receiver || 'N/A').replace(/"/g, '""')}"`,
+                `"${(t.description || 'N/A').replace(/"/g, '""')}"`
+            ];
+            csvRows.push(row.join(','));
+        });
+
+        const csvContent = csvRows.join('\n');
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = mode === 'page'
+            ? `transactions_page_${startPageInput.value}_to_${endPageInput.value}.csv`
+            : `transactions_entry_${startEntryInput.value}_to_${endEntryInput.value}.csv`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+
+        exportModal.style.display = 'none';
+    }
+
+    // Global function to close detailed view
+    window.closeDetailedView = function() {
+        const panel = document.getElementById('detailedPanel');
+        if (panel) panel.remove();
+    };
+});
