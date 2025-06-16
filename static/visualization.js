@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let chart = null;
     let allTransactions = [];
 
-    // Enhanced color palette
+    // Color palette
     const colorPalette = [
         '#667eea', '#764ba2', '#f093fb', '#f5576c',
         '#4facfe', '#00f2fe', '#43e97b', '#38f9d7',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clear existing content and rebuild with proper structure
     visualizationsSection.innerHTML = '';
     
-    // 1. Add dashboard header (top)
+    // Add dashboard header 
     const dashboardHeader = document.createElement('div');
     dashboardHeader.className = 'dashboard-header';
     dashboardHeader.innerHTML = `
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     visualizationsSection.appendChild(dashboardHeader);
 
-    // 2. Create stats grid (second)
+    // Create stats grid 
     const statsGrid = document.createElement('div');
     statsGrid.className = 'stats-grid';
     statsGrid.id = 'statsGrid';
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     visualizationsSection.appendChild(statsGrid);
 
-    // 3. Create filter container (third)
+    // Create filter container 
     const filterContainer = document.createElement('div');
     filterContainer.className = 'filter-container';
     filterContainer.innerHTML = `
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     visualizationsSection.appendChild(filterContainer);
 
-    // 4. Create chart container (fourth/last)
+    // Create chart container 
     const chartContainer = document.createElement('div');
     chartContainer.className = 'chart-container';
     chartContainer.innerHTML = `
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 size: 12,
                                 family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                             },
-                            color: '#ffffff' // White legend text
+                            color: '#ffffff' 
                         }
                     },
                     tooltip: {
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 size: 14,
                                 family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                             },
-                            color: '#ffffff' // White x-axis title
+                            color: '#ffffff' 
                         },
                         grid: {
                             display: false
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 size: 11,
                                 family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                             },
-                            color: '#ffffff' // White x-axis labels
+                            color: '#ffffff' 
                         }
                     },
                     y: {
@@ -356,17 +356,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                 size: 14,
                                 family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                             },
-                            color: '#ffffff' // White y-axis title
+                            color: '#ffffff' 
                         },
                         grid: {
-                            color: 'rgba(255, 255, 255, 0.05)' // Light grid lines
+                            color: 'rgba(255, 255, 255, 0.05)' 
                         },
                         ticks: {
                             font: {
                                 size: 11,
                                 family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                             },
-                            color: '#ffffff' // White y-axis labels
+                            color: '#ffffff' 
                         }
                     }
                 },

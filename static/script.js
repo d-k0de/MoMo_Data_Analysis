@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             allTransactions = data;
-            filteredTransactions = applyFilters(false); // Don't reset page on initial load
+            filteredTransactions = applyFilters(false); 
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         endEntryInput.value = Math.min(filteredTransactions.length, itemsPerPage);
         pageRangeInputs.style.display = 'block';
         entryRangeInputs.style.display = 'none';
-        exportModeRadios[0].checked = true; // Default to page range
+        exportModeRadios[0].checked = true; 
     });
     cancelExport.addEventListener('click', () => {
         exportModal.style.display = 'none';
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
         
         if (resetPage) {
-            currentPage = 1; // Only reset page when explicitly requested
+            currentPage = 1; 
         }
         
         updatePagination();

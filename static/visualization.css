@@ -1,52 +1,54 @@
-/* Professional Dashboard Styles */
+/* Reset default browser styles and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body background and typography */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1f3a 0%, #2c2f4a 100%); /* Dark gradient */
+    background: linear-gradient(135deg, #1a1f3a 0%, #2c2f4a 100%);
     margin: 0;
     padding: 20px;
     min-height: 100vh;
 }
 
+/* Main visualization container styling */
 #visualizations {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(44, 47, 74, 0.95); /* Darker background with transparency */
+    background: rgba(44, 47, 74, 0.95);
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
     backdrop-filter: blur(10px);
     position: relative;
-    color: #e0e0e0; /* Light gray for better contrast */
+    color: #e0e0e0;
 }
 
-/* Dashboard Header */
+/* Dashboard header section */
 .dashboard-header {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #3a4060; /* Darker border */
+    border-bottom: 2px solid #3a4060;
 }
 
 .dashboard-title {
     font-size: 2rem;
     font-weight: 300;
-    color: #d1c4e9; /* Light purple for visibility */
+    color: #d1c4e9;
     margin-bottom: 10px;
 }
 
 .dashboard-subtitle {
     font-size: 1rem;
-    color: #b0bec5; /* Light cyan for contrast */
+    color: #b0bec5;
     opacity: 0.9;
 }
 
-/* Statistics Grid */
+/* Statistics grid for summary cards */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -54,8 +56,9 @@ body {
     margin-bottom: 20px;
 }
 
+/* Individual statistic card styling */
 .stat-card {
-    background: linear-gradient(135deg, #667eea, #764ba2); /* Purple-blue gradient */
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -77,6 +80,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
+/* Statistic card hover effect */
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
@@ -86,13 +90,14 @@ body {
     opacity: 1;
 }
 
+/* Statistic value and label */
 .stat-value {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 8px;
     position: relative;
     z-index: 1;
-    color: #ffffff; /* White for maximum contrast */
+    color: #ffffff;
 }
 
 .stat-label {
@@ -102,12 +107,12 @@ body {
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
-    color: #e0e0e0; /* Light gray for readability */
+    color: #e0e0e0;
 }
 
-/* Filter Container */
+/* Filter section container */
 .filter-container {
-    background: #3a4060; /* Slightly lighter dark background */
+    background: #3a4060;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
@@ -115,9 +120,10 @@ body {
     text-align: center;
 }
 
+/* Filter label styling */
 .filter-container label {
     font-weight: 600;
-    color: #d1c4e9; /* Light purple for labels */
+    color: #d1c4e9;
     margin-right: 10px;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -126,13 +132,14 @@ body {
     margin-bottom: 10px;
 }
 
+/* Year filter dropdown styling */
 #yearFilter {
     padding: 10px 15px;
-    border: 2px solid #667eea; /* Blue border */
+    border: 2px solid #667eea;
     border-radius: 10px;
     font-size: 0.9rem;
     background: #2e335a;
-    color: #e0e0e0; /* Light text for dropdown */
+    color: #e0e0e0;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
@@ -140,8 +147,9 @@ body {
     font-family: inherit;
 }
 
+/* Year filter hover and focus effects */
 #yearFilter:hover {
-    border-color: #4caf50; /* Green hover */
+    border-color: #4caf50;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
 }
@@ -152,9 +160,9 @@ body {
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
-/* Chart Container */
+/* Chart container styling */
 .chart-container {
-    background: #2e335a; /* Dark chart background */
+    background: #2e335a;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
@@ -162,6 +170,7 @@ body {
     min-height: 400px;
 }
 
+/* Chart header and titles */
 .chart-header {
     text-align: center;
     margin-bottom: 20px;
@@ -170,16 +179,17 @@ body {
 .chart-title {
     font-size: 1.5rem;
     font-weight: 300;
-    color: #d1c4e9; /* Light purple for title */
+    color: #d1c4e9;
     margin-bottom: 5px;
 }
 
 .chart-subtitle {
     font-size: 0.9rem;
-    color: #b0bec5; /* Light cyan for subtitle */
+    color: #b0bec5;
     opacity: 0.9;
 }
 
+/* Chart container sizing */
 #chartContainer {
     border-radius: 10px;
     max-height: 400px;
@@ -187,7 +197,7 @@ body {
     height: auto !important;
 }
 
-/* No Data Message */
+/* No data message overlay */
 #noDataMessage {
     position: absolute;
     top: 50%;
@@ -199,30 +209,31 @@ body {
     text-align: center;
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
     z-index: 5;
-    color: #e0e0e0; /* Light gray for no data text */
+    color: #e0e0e0;
 }
 
+/* No data icon and text */
 .no-data-icon {
     font-size: 3rem;
     margin-bottom: 15px;
     opacity: 0.5;
-    color: #d1c4e9; /* Light purple icon */
+    color: #d1c4e9;
 }
 
 .no-data-text {
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 8px;
-    color: #ffffff; /* White for high contrast */
+    color: #ffffff;
 }
 
 .no-data-subtext {
     font-size: 0.9rem;
     opacity: 0.7;
-    color: #b0bec5; /* Light cyan for subtext */
+    color: #b0bec5;
 }
 
-/* Loading Overlay */
+/* Loading overlay for async data */
 .loading-overlay {
     position: absolute;
     top: 0;
@@ -237,11 +248,12 @@ body {
     z-index: 10;
 }
 
+/* Spinner animation for loading */
 .spinner {
     width: 40px;
     height: 40px;
     border: 3px solid #f3f3f3;
-    border-top: 3px solid #4caf50; /* Green spinner */
+    border-top: 3px solid #4caf50;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -251,56 +263,47 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
+/* Responsive adjustments for tablets */
 @media (max-width: 768px) {
     body { 
         padding: 10px; 
     }
-    
     #visualizations { 
         padding: 15px; 
     }
-    
     .dashboard-title { 
         font-size: 1.8rem; 
     }
-    
     .filter-container { 
         padding: 15px; 
     }
-    
     .chart-container { 
         padding: 15px; 
         min-height: 350px;
     }
-    
     .stats-grid { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 10px; 
     }
-    
     .stat-card {
         padding: 15px;
     }
-    
     .stat-value {
         font-size: 1.5rem;
     }
 }
 
+/* Responsive adjustments for mobile */
 @media (max-width: 480px) {
     .dashboard-title {
         font-size: 1.5rem;
     }
-    
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
     .chart-title {
         font-size: 1.3rem;
     }
-    
     #yearFilter {
         max-width: 100%;
     }

@@ -21,9 +21,9 @@ Backend data processing, database management, and frontend development.
 
 
 ## Use
-- To run the backend server:
+- To run the backend server (ensure it keeps running):
   ```
-  python scripts/app.py
+  python scripts/app.py 
   ```
 - To process and populate the database with SMS data:
   ```
@@ -34,6 +34,8 @@ Backend data processing, database management, and frontend development.
 ## Directory Hierarchy
 ```
 |—— AUTHORS
+|—— README.md
+|—— Technical_Report_Momo_Analysis.pdf
 |—— data
 |    |—— modified_sms_v2.xml
 |    |—— unprocessed.log
