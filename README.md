@@ -4,7 +4,7 @@ Backend data processing, database management, and frontend development.
 
 ## Information
 - Title:  `MoMo SMS Data Analysis Dashboard`
-- Authors:  `A`,`B`,`C`
+- Authors:  `Divine Ifechukwude`,`Enoch Mugisha`,`Kelly Nshuti Dushimimana`, `Ulrich Rukazambuga` 
 - Video: [Demo video](https://drive.google.com/file/d/1MH9qHUaUNnRb41DVrQJPUQeI--Pm1vIZ/view?usp=sharing)
 
 ## Install & Dependence
