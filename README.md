@@ -1,2 +1,79 @@
 # MoMo_Data_Analysis Readme
 Backend data processing, database management, and frontend development.
+===
+
+## Information
+- Title:  `MoMo SMS Data Analysis Dashboard`
+- Authors:  `A`,`B`,`C`
+- Video: [https://drive.google.com/file/d/1MH9qHUaUNnRb41DVrQJPUQeI--Pm1vIZ/view?usp=sharing]()
+
+## Install & Dependence
+- Python 3.8+
+- Flask
+- sqlite3 (included with Python)
+- lxml or xml.etree.ElementTree (for XML parsing)
+- Chart.js (included via CDN in index.html)
+
+## Dataset Preparation
+| Dataset | Download |
+| ---     | ---   |
+| MTN MoMo SMS Data| [download](data\modified_sms_v2.xml) |
+
+
+## Use
+- To run the backend server:
+  ```
+  python scripts/app.py
+  ```
+- To process and populate the database with SMS data:
+  ```
+  python scripts/process_sms.py
+  ```
+  - To view the dashboard, open index.html in a browser after starting the server at http://127.0.0.1:5000
+
+## Directory Hierarchy
+```
+|—— AUTHORS
+|—— data
+|    |—— modified_sms_v2.xml
+|    |—— unprocessed.log
+|—— database
+|    |—— momo_data.db
+|    |—— schema.sql
+|—— index.html
+|—— scripts
+|    |—— app.py
+|    |—— process_sms.py
+|—— static
+|    |—— script.js
+|    |—— styles.css
+|    |—— visualization.css
+|    |—— visualization.js
+```
+## Code Details
+### Tested Platform
+- software
+  ```
+  OS: Windows 10 (June 2025), Ubuntu LTS
+  Python: 3.13.0
+  Flask: 2.3.2
+  ```
+
+## References
+- [Python XML Parsing](https://docs.python.org/3/library/xml.etree.elementtree.html)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
+- [SQLite Documentation](https://www.sqlite.org/docs.html)
+  
+## License
+
+## Citing
+If you use xxx,please use the following BibTeX entry.
+```
+@misc{MoMoDataAnalysis2025,
+  author = {Divine Ifechukwude, Name, Name, Name},
+  title = {MoMo SMS Data Analysis Dashboard},
+  year = {2025},
+  howpublished = {\url{https://github.com/d-k0de/MoMo_Data_Analysis}}
+}
+```
