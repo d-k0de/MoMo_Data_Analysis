@@ -5,7 +5,7 @@ Backend data processing, database management, and frontend development.
 ## Information
 - Title:  `MoMo SMS Data Analysis Dashboard`
 - Authors:  `A`,`B`,`C`
-- Video: [https://drive.google.com/file/d/1MH9qHUaUNnRb41DVrQJPUQeI--Pm1vIZ/view?usp=sharing]()
+- Video: [Demo video](https://drive.google.com/file/d/1MH9qHUaUNnRb41DVrQJPUQeI--Pm1vIZ/view?usp=sharing)
 
 ## Install & Dependence
 - Python 3.8+
