@@ -64,3 +64,9 @@ Backend data processing, database management, and frontend development.
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
 - [SQLite Documentation](https://www.sqlite.org/docs.html)
+
+## Technical Report
+
+| Report | Download |
+| ---     | ---   |
+| Technical Report| [download](Technical_Report_Momo_Analysis.pdf) |
