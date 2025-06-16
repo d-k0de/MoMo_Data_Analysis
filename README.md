@@ -17,7 +17,7 @@ Backend data processing, database management, and frontend development.
 ## Dataset Preparation
 | Dataset | Download |
 | ---     | ---   |
-| MTN MoMo SMS Data| [download](data\modified_sms_v2.xml) |
+| MTN MoMo SMS Data| [download](data/modified_sms_v2.xml) |
 
 
 ## Use
